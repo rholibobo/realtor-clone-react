@@ -53,6 +53,7 @@ export default function SignUp() {
       // Adding timestamp
       formDataCopy.timestamp = serverTimestamp();
 
+      // Add user to firebase database
       await setDoc(doc(db, "users", user.uid), formDataCopy)
       navigate('/');
 
